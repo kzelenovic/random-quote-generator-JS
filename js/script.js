@@ -62,6 +62,22 @@ console.log(getRandomQuote(quotes));
  * `printQuote` function
 ***/
 
+function printQuote() {
+  let randomQuote = getRandomQuote(quotes);
+  let htmlString = `<p class="quote">${randomQuote.quote}</p>
+  <p class="source">${randomQuote.source}`;
+  if (randomQuote.citation) {
+    htmlString += `<span class="citation">${randomQuote.citation}</span>`;
+  }
+  if (randomQuote.year) {
+    htmlString += `<span class="citation">${randomQuote.year}</span>`;
+  }
+  htmlString += `</p>`;
+  return document.getElementById('quote-box').innerHTML = htmlString;
+}
+
+console.log(printQuote());
+
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
