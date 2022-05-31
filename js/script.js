@@ -97,7 +97,7 @@ function getRandomQuote(arr) {
 
 function printQuote() {
   let randomQuote = getRandomQuote(quotes);
-  let htmlString = `<style>body{background-color: ${randomRGB(randomColorNum)}}</style><p class="quote">${randomQuote.quote}</p>
+  let htmlString = `<p class="quote">${randomQuote.quote}</p>
   <p class="source">${randomQuote.source}`;
   if (randomQuote.citation) {
     htmlString += `<span class="citation">${randomQuote.citation}</span>`;
@@ -106,9 +106,10 @@ function printQuote() {
     htmlString += `<span class="year">${randomQuote.year}</span>`;
   }
   if (randomQuote.tag) {
-    htmlString += `<span class="citation">${randomQuote.tag}</span>`;
+    htmlString += `<span class="tag">${randomQuote.tag}</span>`;
   }
   htmlString += `</p>`;
+  document.body.style.backgroundColor = randomRGB(randomColorNum);
   return document.getElementById('quote-box').innerHTML = htmlString;
 }
 
