@@ -1,2 +1,2 @@
-# techdegree-project-1
- My first techdegree project :)
+# random-quote-generator-JS
+ A random quote generator using JavaScript
